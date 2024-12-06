@@ -1,0 +1,115 @@
+Contest Link --> https://www.hackerrank.com/contests/practic-contest-1/challenges
+
+Problem 1 (Simple Array Sum) 
+  
+   public static int simpleArraySum(List<Integer> ar) {
+      int sum = 0;
+
+        for(Integer i : ar){
+            sum += i; 
+        }
+        return sum;
+
+    }
+
+-----------------------------------------------------------------------
+Problem 2 (Divisible Sum Pairs Approach 1 ) 
+	
+   public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+    // Write your code here
+        int pairCnt = 0; 
+        for(int i = 0; i < n; i++){
+            for(int j = i + 1; j < n ;j++){
+                int sum = ar.get(i) + ar.get(j); 
+                if(sum % k == 0)pairCnt++; 
+            }
+        }
+        return pairCnt; 
+    }
+
+----------------------------Approach 2---------------------------------- 
+   
+  public static int divisibleSumPairs(int n, int k, List<Integer> arr) {
+  int ans = 0;
+  HashMap<Integer, Integer> mp = new HashMap<>();
+  for (int i = 0; i < n; i++) {
+    int b = (arr.get(i) % k + k) % k; // Ensure non-negative remainder
+
+    int a = (b == 0) ? 0 : k - b; // Calculate required pair remainder
+    if (mp.containsKey(a)) {
+      ans += mp.get(a); // Add count of valid pairs
+    }
+
+    mp.put(b, mp.getOrDefault(b, 0) + 1); // Update the map
+  }
+  return ans;
+}
+-------------------------------------------------------------------------
+
+Problem 3 (Left Rotation)
+    public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+        ArrayList<Integer>ans = new ArrayList<>(); 
+        for(int i = d; i < arr.size(); i++)ans.add(arr.get(i)); 
+        for(int i = 0; i < d; i++)ans.add(arr.get(i)); 
+        return ans; 
+    }
+-------------------------------------------------------------------------
+Problem  4 (Missing Numbers)// Approach 1 
+
+ public static List<Integer> missingNumbers(
+    List<Integer> arr, List<Integer> brr) {
+  ArrayList<Integer> ans = new ArrayList<>();
+  Collections.sort(arr);
+  Collections.sort(brr);
+  int i = 0;
+  int j = 0;
+  while (i < arr.size() && j < brr.size()) {
+    if (!arr.get(i).equals(brr.get(j))) {
+      if (ans.isEmpty() || !ans.get(ans.size() - 1).equals(brr.get(j))) {
+        ans.add(brr.get(j));
+      }
+      j++;
+    } else {
+      i++;
+      j++;
+    }
+  }
+  while (j < brr.size()) {
+    if (ans.isEmpty() || !ans.get(ans.size() - 1).equals(brr.get(j))) {
+      ans.add(brr.get(j));
+    }
+    j++;
+  }
+  return ans;
+}
+
+---------------------Approach 2--------------------------------
+
+public static List<Integer> missingNumbers(
+    List<Integer> arr, List<Integer> brr) {
+  // Write your code here
+  int freq[] = new int[101];
+  int minNumber = Integer.MAX_VALUE;
+
+  for (Integer i : brr) {
+    minNumber = Math.min(minNumber, i);
+  }
+  for (Integer i : brr) {
+    freq[i - minNumber]++;
+  }
+  for (Integer i : arr) {
+    freq[i - minNumber]--;
+  }
+  ArrayList<Integer> ans = new ArrayList<>();
+  for (int i = 0; i < 101; i++) {
+    if (freq[i] > 0) {
+      Integer value = (i + minNumber);
+      ans.add(value);
+    }
+  }
+  return ans;
+}
+
+--------------------------END-------------------------------
+
+	

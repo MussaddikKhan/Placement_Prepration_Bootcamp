@@ -1,6 +1,5 @@
 import javax.sound.midi.Soundbank;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class arraylist {
     public static void main(String[] args) {
@@ -19,9 +18,17 @@ public class arraylist {
 //        for(int i = 0;  i < arr.size(); i++){
 //            System.out.print(arr.get(i) + " ");
 //        }
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        hm.put(1,1);
+        
+        String s = "";
+        s.length() ;
+        s += '9';
+        
         for(Integer i : arr){
             System.out.print(i + " ");
         }
+        
         System.out.println();
         System.out.println(arr);
     }
