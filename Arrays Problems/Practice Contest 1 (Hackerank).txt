@@ -12,6 +12,9 @@ Problem 1 (Simple Array Sum)
 
     }
 
+Time Complexity - O(n) 
+Space Complexity -O(1) 
+
 -----------------------------------------------------------------------
 Problem 2 (Divisible Sum Pairs Approach 1 ) 
 	
@@ -26,6 +29,9 @@ Problem 2 (Divisible Sum Pairs Approach 1 )
         }
         return pairCnt; 
     }
+
+Time Complexity - O(n*n) 
+Space Complexity -O(1) 
 
 ----------------------------Approach 2---------------------------------- 
    
@@ -44,6 +50,8 @@ Problem 2 (Divisible Sum Pairs Approach 1 )
   }
   return ans;
 }
+Time Complexity - O(n) 
+Space Complexity -O(n) 
 -------------------------------------------------------------------------
 
 Problem 3 (Left Rotation)
@@ -53,6 +61,9 @@ Problem 3 (Left Rotation)
         for(int i = 0; i < d; i++)ans.add(arr.get(i)); 
         return ans; 
     }
+
+Time Complexity - O(n) 
+Space Complexity -O(1) 
 -------------------------------------------------------------------------
 Problem  4 (Missing Numbers)// Approach 1 
 
@@ -82,6 +93,8 @@ Problem  4 (Missing Numbers)// Approach 1
   }
   return ans;
 }
+Time Complexity - O(nlogn + n) 
+Space Complexity -O(1) 
 
 ---------------------Approach 2--------------------------------
 
@@ -110,6 +123,8 @@ public static List<Integer> missingNumbers(
   return ans;
 }
 
+Time Complexity - O(n) 
+Space Complexity -O(100) or O(1)
 --------------------------END-------------------------------
 
 	
