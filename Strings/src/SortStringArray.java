@@ -8,15 +8,10 @@ public class SortStringArray {
             System.out.println(s);
         }
         System.out.println();
-        Comparator<String> comp= new Comparator<String>(){    //Anonymous Inner Class
+        Comparator<String> comp = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                if(o1.charAt(1) == o2.charAt(1)) {
-                    if(o1.charAt(2) < o2.charAt(2)) return 1;
-                    return -1;
-                }
-                else if(o1.charAt(1) > o2.charAt(1))return 1;
-                else return -1;
+                return 0;
             }
         };
         Arrays.sort(arr, comp);
